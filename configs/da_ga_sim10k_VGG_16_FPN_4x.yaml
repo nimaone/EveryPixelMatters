@@ -4,7 +4,6 @@ MODEL:
   #
   WEIGHT: 'https://download.openmmlab.com/pretrain/third_party/vgg16_caffe-292e1171.pth' # Initialed by pretrained weight
 
-  https://download.openmmlab.com/pretrain/third_party/vgg16_caffe-292e1171.pth
   RPN_ONLY: True
   FCOS_ON: True
   DA_ON: True
