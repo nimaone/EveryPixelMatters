@@ -29,7 +29,8 @@ import os
 import scipy.misc
 import sys
 
-import cityscapesscripts.evaluation.instances2dict_with_polygons as cs
+# import cityscapesscripts.evaluation.instances2dict_with_polygons as cs
+import tools.cityscapes.instances2dict_with_polygons as cs
 
 
 def parse_args():
