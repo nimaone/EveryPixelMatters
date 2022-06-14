@@ -125,10 +125,19 @@ def convert_cityscapes_instance_only(
         # 'gtCoarse_val',
         # 'gtCoarse_train_extra'
     ]
+#     ann_dirs = [
+#         'gtFine_trainvaltest/gtFine/val',
+#         'gtFine_trainvaltest/gtFine/train',
+#         'gtFine_trainvaltest/gtFine/test',
+
+#         # 'gtCoarse/train',
+#         # 'gtCoarse/train_extra',
+#         # 'gtCoarse/val'
+#     ]
     ann_dirs = [
-        'gtFine_trainvaltest/gtFine/val',
-        'gtFine_trainvaltest/gtFine/train',
-        'gtFine_trainvaltest/gtFine/test',
+        'gtFine/val',
+        'gtFine/train',
+        'gtFine/test',
 
         # 'gtCoarse/train',
         # 'gtCoarse/train_extra',
