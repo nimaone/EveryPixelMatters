@@ -26,11 +26,13 @@ import json
 import os
 import scipy.misc
 import sys
+import numpy as np
 
-import cityscapesscripts.evaluation.instances2dict_with_polygons as cs
+# import cityscapesscripts.evaluation.instances2dict_with_polygons as cs
+import tools.cityscapes.instances2dict_with_polygons as cs
 
-import detectron.utils.segms as segms_util
-import detectron.utils.boxes as bboxs_util
+# import detectron.utils.segms as segms_util
+# import detectron.utils.boxes as bboxs_util
 
 
 def parse_args():
@@ -69,9 +71,9 @@ def convert_cityscapes_car_only(
         # 'gtCoarse_train_extra'
     ]
     ann_dirs = [
-        'gtFine_trainvaltest/gtFine/val',
-        'gtFine_trainvaltest/gtFine/train',
-        # 'gtFine_trainvaltest/gtFine/test',
+        'gtFine/val',
+        'gtFine/train',
+        # 'gtFine/test',
 
         # 'gtCoarse/train',
         # 'gtCoarse/train_extra',
@@ -159,7 +161,7 @@ def convert_cityscapes_car_only(
         print("Num images: %s" % len(images))
         print("Num annotations: %s" % len(annotations))
         print(categories)
-        with open(os.path.join(out_dir, json_name % data_set), 'wb') as outfile:
+        with open(os.path.join(out_dir, json_name % data_set), 'w') as outfile:
             outfile.write(json.dumps(ann_dict))
 
 
