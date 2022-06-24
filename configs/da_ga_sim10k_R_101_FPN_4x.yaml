@@ -44,7 +44,7 @@ MODEL:
 TEST:
   DETECTIONS_PER_IMG: 100 # fpn_post_nms_top_n  (default=100)
 DATASETS:
-  TRAIN_SOURCE: ("sim10k_trainval_caronly", ) 
+  TRAIN_SOURCE: ("sim10k_trainval_caronly_cocostyle", ) 
   TRAIN_TARGET: ("cityscapes_train_caronly_cocostyle", )
   TEST: ("cityscapes_val_caronly_cocostyle", )
 INPUT:
