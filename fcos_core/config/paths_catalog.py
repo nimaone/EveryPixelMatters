@@ -118,10 +118,14 @@ class DatasetCatalog(object):
             "img_dir": "Cityscapes/leftImg8bit_foggy/val",
             "ann_file": "Cityscapes/cocoAnnotations/cityscapes_foggy_val_cocostyle.json"
         },
-        "sim10k_trainval_caronly": {
-            "data_dir": "Sim10k",
-            "split": "trainval10k_caronly"
+        'sim10k_trainval_cocostyle': {
+                "img_dir": 'sim10k/JPEGImages',
+                "ann_file": 'sim10k/car_instances.json'
         },
+#         "sim10k_trainval_caronly": {
+#             "data_dir": "Sim10k",
+#             "split": "trainval10k_caronly"
+#         },
         "kitti_train_caronly": {
             "data_dir": "KITTI",
             "split": "train_caronly"
