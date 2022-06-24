@@ -145,17 +145,17 @@ class DatasetCatalog(object):
                 factory="KittiDataset",
                 args=args,
             )
-        elif "sim10k" in name:
-            data_dir = DatasetCatalog.DATA_DIR
-            attrs = DatasetCatalog.DATASETS[name]
-            args = dict(
-                data_dir=os.path.join(data_dir, attrs["data_dir"]),
-                split=attrs["split"],
-            )
-            return dict(
-                factory="Sim10kDataset",
-                args=args,
-            )
+#         elif "sim10k" in name:
+#             data_dir = DatasetCatalog.DATA_DIR
+#             attrs = DatasetCatalog.DATASETS[name]
+#             args = dict(
+#                 data_dir=os.path.join(data_dir, attrs["data_dir"]),
+#                 split=attrs["split"],
+#             )
+#             return dict(
+#                 factory="Sim10kDataset",
+#                 args=args,
+#             )
         elif "coco" in name:
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
