@@ -49,6 +49,21 @@ def parse_args():
         sys.exit(1)
     return parser.parse_args()
 
+def poly_to_box(poly):
+    """Convert a polygon into a tight bounding box."""
+    x0 = min(min(p[::2]) for p in poly)
+    x1 = max(max(p[::2]) for p in poly)
+    y0 = min(min(p[1::2]) for p in poly)
+    y1 = max(max(p[1::2]) for p in poly)
+    box_from_poly = [x0, y0, x1, y1]
+
+    return box_from_poly
+
+def xyxy_to_xywh(xyxy_box):
+    xmin, ymin, xmax, ymax = xyxy_box
+    TO_REMOVE = 1
+    xywh_box = (xmin, ymin, xmax - xmin + TO_REMOVE, ymax - ymin + TO_REMOVE)
+    return xywh_box
 
 # for Cityscapes
 def getLabelID(self, instID):
@@ -146,8 +161,8 @@ def convert_cityscapes_car_only(
                             ann['category_id'] = category_dict[object_cls]
                             ann['iscrowd'] = 0
                             ann['area'] = obj['pixelCount']
-                            ann['bbox'] = bboxs_util.xyxy_to_xywh(
-                                segms_util.polys_to_boxes(
+                            ann['bbox'] = xyxy_to_xywh(
+                                polys_to_boxes(
                                     [ann['segmentation']])).tolist()[0]
 
                             annotations.append(ann)
